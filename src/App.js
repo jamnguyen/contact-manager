@@ -5,16 +5,19 @@ import './App.css';
 
 import Header from './components/Header/Header';
 import Contacts from './components/Contacts/Contacts';
+import { Provider } from './AppContext';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Header title="Contact Manager" />
-        <div className="container">
-          <Contacts />
+      <Provider>
+        <div className="App">
+          <Header title="Contact Manager" />
+          <div className="container">
+            <Contacts />
+          </div>
         </div>
-      </div>
+      </Provider>
     );
   }
 }
