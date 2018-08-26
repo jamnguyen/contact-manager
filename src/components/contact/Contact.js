@@ -32,8 +32,8 @@ class Contact extends Component {
           return (
             <div className="card card-body mb-3">
               <div className="d-flex justify-content-between">
-                <h4>{ name }  <i className={'fas ' + (showDetails ? 'fa-angle-up' : 'fa-angle-down')} onClick={this.toggleDetails}/></h4>
-                <i className="fas fa-times text-danger" onClick={this.deleteContact.bind(this, id, dispatch)}/>          
+                <h4>{ name }  <i className={'pointer fas ' + (showDetails ? 'fa-angle-up' : 'fa-angle-down')} onClick={this.toggleDetails}/></h4>
+                <i className="fas fa-times text-danger pointer" onClick={this.deleteContact.bind(this, id, dispatch)}/>          
               </div>
               { showDetails ? (
                 <ul className="list-group">

@@ -2,12 +2,18 @@ import React, { Component } from 'react';
 
 export const ACTION_TYPES = {
   CONTACT: {
+    ADD: 'CONTACT_ADD',
     DELETE: 'CONTACT_DELETE',
   }
 }
 
 const reduce = (state, action) => {
   switch(action.type) {
+    case ACTION_TYPES.CONTACT.ADD:
+      return ({
+        ...state,
+        contacts: [action.payload, ...state.contacts]
+      });
     case ACTION_TYPES.CONTACT.DELETE:
       return ({
         ...state,
