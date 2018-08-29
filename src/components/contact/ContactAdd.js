@@ -7,11 +7,31 @@ class ContactAdd extends Component {
   state = {
     name: '',
     email: '',
-    phone: ''
+    phone: '',
+    errors: {}
   };
 
   onAddContact = (dispatch, e) => {
     e.preventDefault();
+
+    // Name
+    if (this.state.name === '' || this.state.name === null || this.state.name === undefined) {
+      this.setState({ errors: { name: 'Name is required' } });
+      return;
+    }
+
+    // Email
+    if (this.state.email === '' || this.state.email === null || this.state.email === undefined) {
+      this.setState({ errors: { email: 'Email is required' } });
+      return;
+    }
+
+    // Phone
+    if (this.state.phone === '' || this.state.phone === null || this.state.phone === undefined) {
+      this.setState({ errors: { phone: 'Phone is required' } });
+      return;
+    }
+
     const { name, email, phone } = this.state;
     const newContact = {
       id: uuid(),
@@ -25,14 +45,15 @@ class ContactAdd extends Component {
     this.setState({
       name: '',
       email: '',
-      phone: ''
+      phone: '',
+      errors: {}
     })
   }
 
   onInputChange = e => this.setState({[e.target.name]: e.target.value});
 
   render() {
-    const { name, email, phone } = this.state;
+    const { name, email, phone, errors } = this.state;
 
     return (
       <Consumer>
@@ -50,6 +71,7 @@ class ContactAdd extends Component {
                     value={ name }
                     placeHolder="Enter name..."
                     onChange={ this.onInputChange }
+                    error={ errors.name }
                   />
                   <TextInput
                     label="Email"
@@ -58,6 +80,7 @@ class ContactAdd extends Component {
                     value={ email }
                     placeHolder="Enter email..."
                     onChange={ this.onInputChange }
+                    error={ errors.email }
                   />
                   <TextInput
                     label="Phone"
@@ -65,6 +88,7 @@ class ContactAdd extends Component {
                     value={ phone }
                     placeHolder="Enter phone..."
                     onChange={ this.onInputChange }
+                    error={ errors.phone }
                   />
                   <input
                     type="submit"
