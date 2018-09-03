@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
   render() {
@@ -12,9 +13,19 @@ class Header extends Component {
           <div>
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <a href="/" className="nav-link">
-                  Home
-                </a>
+                <Link to="/" className="nav-link">
+                  <i className="fas fa-home" /> Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/contact/add" className="nav-link">
+                  <i className="fas fa-plus-circle" /> Add
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/about" className="nav-link">
+                  <i className="fas fa-question-circle" /> About
+                </Link>
               </li>
             </ul>
           </div>

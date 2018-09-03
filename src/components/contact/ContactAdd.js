@@ -47,7 +47,10 @@ class ContactAdd extends Component {
       email: '',
       phone: '',
       errors: {}
-    })
+    });
+
+    // Redirect to Home
+    this.props.history.push('/');
   }
 
   onInputChange = e => this.setState({[e.target.name]: e.target.value});
