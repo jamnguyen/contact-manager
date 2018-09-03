@@ -64,40 +64,42 @@ class ContactAdd extends Component {
           const { dispatch } = value;
 
           return (
-            <div className="card mb-3">
-              <div className="card-header">Add Contact</div>
-              <div className="card-body">
-                <form onSubmit={this.onAddContact.bind(this, dispatch)}>
-                  <TextInput
-                    label="Name"
-                    name="name"
-                    value={ name }
-                    placeHolder="Enter name..."
-                    onChange={ this.onInputChange }
-                    error={ errors.name }
-                  />
-                  <TextInput
-                    label="Email"
-                    name="email"
-                    type="email"
-                    value={ email }
-                    placeHolder="Enter email..."
-                    onChange={ this.onInputChange }
-                    error={ errors.email }
-                  />
-                  <TextInput
-                    label="Phone"
-                    name="phone"
-                    value={ phone }
-                    placeHolder="Enter phone..."
-                    onChange={ this.onInputChange }
-                    error={ errors.phone }
-                  />
-                  <input
-                    type="submit"
-                    className="btn btn-light btn-block"
-                    value="Add" />
-                </form>
+            <div>
+              <h1 className="display-5">Add Contact</h1>
+              <div className="card mb-3">
+                <div className="card-body">
+                  <form onSubmit={this.onAddContact.bind(this, dispatch)}>
+                    <TextInput
+                      label="Name"
+                      name="name"
+                      value={ name }
+                      placeHolder="Enter name..."
+                      onChange={ this.onInputChange }
+                      error={ errors.name }
+                    />
+                    <TextInput
+                      label="Email"
+                      name="email"
+                      type="email"
+                      value={ email }
+                      placeHolder="Enter email..."
+                      onChange={ this.onInputChange }
+                      error={ errors.email }
+                    />
+                    <TextInput
+                      label="Phone"
+                      name="phone"
+                      value={ phone }
+                      placeHolder="Enter phone..."
+                      onChange={ this.onInputChange }
+                      error={ errors.phone }
+                    />
+                    <input
+                      type="submit"
+                      className="btn btn-light btn-block mt-4"
+                      value="Add" />
+                  </form>
+                </div>
               </div>
             </div>
           );

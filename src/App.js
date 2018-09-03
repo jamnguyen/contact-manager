@@ -9,6 +9,7 @@ import Header from './components/layout/Header';
 import About from './components/pages/About';
 import Contacts from './components/contact/Contacts';
 import ContactAdd from './components/contact/ContactAdd';
+import NotFound from './components/pages/NotFound';
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
                 <Route exact path="/" component={ Contacts }></Route>
                 <Route exact path="/about" component={ About }></Route>
                 <Route exact path="/contact/add" component={ ContactAdd }></Route>
+                <Route exact component={ NotFound }></Route>
               </Switch>
             </div>
           </div>
